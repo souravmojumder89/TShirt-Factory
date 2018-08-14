@@ -1,6 +1,6 @@
 package com.sapient.saurav.controller;
 
-        import com.sapient.saurav.domain.Tshirt;
+import com.sapient.saurav.domain.Tshirt;
         import com.sapient.saurav.repository.TshirtRepository;
         import org.springframework.beans.factory.annotation.Autowired;
         import org.springframework.data.domain.Page;
@@ -9,8 +9,10 @@ package com.sapient.saurav.controller;
 
         import java.util.List;
 
+
 @RestController
 @RequestMapping("/tshirt-factory")
+@CrossOrigin
 public class TshirtController {
 
     private final TshirtRepository tshirtRepository ;
@@ -28,9 +30,5 @@ public class TshirtController {
         tshirtRepository.saveAll(tshirts);
         return tshirts ;
     }
-    /*@GetMapping(value = "/buy/{id}")
-    public List<Tshirt> getAllTshirts(){
-        return (List<Tshirt>)tshirtRepository.findAll();
-    }*/
 
 }
